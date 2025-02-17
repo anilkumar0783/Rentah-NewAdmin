@@ -74,11 +74,12 @@ const UsersTable = ({ users, loading, page, setPage, rowsPerPage, setRowsPerPage
                         <TableCell>S.NO</TableCell>
                         <TableCell>Profile</TableCell>
                         <TableCell>Username</TableCell>
-                        <TableCell>UserId</TableCell>
+                        {/* <TableCell>UserId</TableCell> */}
                         <TableCell>Email</TableCell>
+                        <TableCell>Phone</TableCell>
                         <TableCell>Location</TableCell>
                         <TableCell>JoinedOn</TableCell>
-                        <TableCell>Phone</TableCell>
+                       
                         <TableCell>Info</TableCell>
                         <TableCell>Delete</TableCell>
                     </TableRow>
@@ -108,8 +109,9 @@ const UsersTable = ({ users, loading, page, setPage, rowsPerPage, setRowsPerPage
                                     />
                                 </TableCell>
                                 <TableCell>{item.fullName}</TableCell>
-                                <TableCell>{item._id || "Not Found"}</TableCell>
+                                {/* <TableCell>{item._id || "Not Found"}</TableCell> */}
                                 <TableCell>{item?.email || "..."}</TableCell>
+                                <TableCell>{item.phone || "N/A"}</TableCell>
                                 <TableCell>
                                     {item.city ? `${item.city}, ${item.state}` : item.state}
                                 </TableCell>
@@ -117,7 +119,7 @@ const UsersTable = ({ users, loading, page, setPage, rowsPerPage, setRowsPerPage
                                 <TableCell>
                                     {`${new Date(item.creationTimeStamp).getDate()}/${new Date(item.creationTimeStamp).getMonth() + 1}/${new Date(item.creationTimeStamp).getFullYear()}`}
                                 </TableCell>
-                                <TableCell>{item.phone || "N/A"}</TableCell>
+                                
                                 <TableCell>
                                     <IconButton
                                         sx={{
