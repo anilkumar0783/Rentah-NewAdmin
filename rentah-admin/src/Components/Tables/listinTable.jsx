@@ -143,7 +143,7 @@ const ListingTable = ({ listings, loading, page, setPage, rowsPerPage, setRowsPe
             <TableCell>Category</TableCell>
             <TableCell>Created On</TableCell>
             <TableCell>Location</TableCell>
-            <TableCell>Price/Type</TableCell>
+            <TableCell>Price</TableCell>
             <TableCell align="center">Action</TableCell>
           </TableRow>
         </TableHead>
@@ -190,7 +190,7 @@ const ListingTable = ({ listings, loading, page, setPage, rowsPerPage, setRowsPe
                 <TableCell>{new Date(item.creationTimeStamp).toLocaleDateString()}</TableCell>
                 <TableCell>{item.location}</TableCell>
                 <TableCell>
-                  ${item.budget}/{["Day", "Week", "Month", "For Sale", "Hour", "Custom", "Year"][item.type]}
+                  ${item.budget}/{["Day", "Week", "Month", "For Sale", "Hour", "Custom", "Year"][item.type]||"type"}
                 </TableCell>
                 <TableCell>
                   <Box display="flex" gap={1}>
